@@ -8,6 +8,7 @@ from math import * #imports math library to use the mathematical functions
 
 def arctangent(a,b):
     # if statements for the base's angle
+    theta = 0
     if a == 0: # if its purely imaginary, the angle arctangent would be b/0, and python cannot compute that
         if b > 0:
             theta = pi/2 # where arctan(+b/0) = pi/2; and any pure imaginary number either has pi/2 for positive or (-pi/2 or 3pi/2) for negative
@@ -45,6 +46,8 @@ while (n != "n" and n != "N"):
         alpha = arctangent(a,b)
         beta = arctangent(c,d)
 
+        print("\n")
+
         if radiusBase == 0:
             if radiusInput == 0:
                 print("This is undefined")
@@ -60,7 +63,8 @@ while (n != "n" and n != "N"):
         else:
             real = (log(radiusBase)*log(radiusInput)+alpha*beta)/(log(radiusBase)**2+alpha**2)
             imaginary = (beta*log(radiusBase) - alpha*log(radiusInput))/(log(radiusBase)**2+alpha**2)
-            # (theta2*ln|r1| - theta1*ln|r2|)/(ln^2|r1|+theta1^2)
+            checkComplex(real,imaginary)
+            
 
     elif n == "n" or n == "N":
         print("\nBye-bye!")
