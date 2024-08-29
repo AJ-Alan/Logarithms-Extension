@@ -23,11 +23,11 @@ def arctangent(a,b):
 def checkComplex(real,imaginary):
     ## if statements for checking if the result is Real, Imaginary, or Complex
     if round(imaginary,4) == 0: #Real results only
-        print("\nThe result is Real:\n\t", round(real,4))
+        print("The result is Real: ", round(real,4))
     elif round(real,4) == 0: #Imaginary results only
-        print("\nThe result is Imaginary:\n\t", round(imaginary,4), " * i")
+        print("The result is Imaginary: ", round(imaginary,4), " * i")
     else: # Complex results only
-        print("\nThe result is Complex::\n\t", round(real,4), " + ", round(imaginary,4), " * i")
+        print("The result is Complex: ", round(real,4), " + ", round(imaginary,4), " * i")
 
 def typeConvert(n):
     if n == "e":
@@ -67,6 +67,8 @@ while (n != "n" and n != "N"):
                 print("This is undefined")
             else:
                 print("The result is 0")
+        elif radiusInput == 0:
+            print("The result is complex infinity")
         elif a == 1 and b == 0:
             if c == 1 and d == 0:
                 print("This is undefined")
@@ -79,7 +81,6 @@ while (n != "n" and n != "N"):
             imaginary = (beta*log(radiusBase) - alpha*log(radiusInput))/(log(radiusBase)**2+alpha**2)
             checkComplex(real,imaginary)
             
-
     elif n == "n" or n == "N":
         print("\nBye-bye!")
     else:
