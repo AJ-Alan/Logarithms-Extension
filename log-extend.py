@@ -29,16 +29,30 @@ def checkComplex(real,imaginary):
     else: # Complex results only
         print("\nThe result is Complex::\n\t", round(real,4), " + ", round(imaginary,4), " * i")
 
+def typeConvert(n):
+    if n == "e":
+        n = exp(1)
+    elif n == "pi":
+        n = pi
+    else:
+        n = float(n)
+    return n
+
 n = "y"
 while (n != "n" and n != "N"):
     n = input("\nDo you want to Calculate Logarithms?\n>>")
     if n == "y" or n == "Y":
         print("For the base:")
-        a = float(input("input a (Real): ")) #input real number a (base)
-        b = float(input("input b (Imaginary): ")) #input real number b for imaginary part (base)
+        a = input("input a (Real): ") #input real number a (base)
+        b = input("input b (Imaginary): ") #input real number b for imaginary part (base)
         print("For the input:")
-        c = float(input("input c (Real): ")) #input real number c (input)
-        d = float(input("input d (Imaginary): ")) #input real number d for imaginary part (input)
+        c = input("input c (Real): ") #input real number c (input)
+        d = input("input d (Imaginary): ") #input real number d for imaginary part (input)
+
+        a = typeConvert(a)
+        b = typeConvert(b)
+        c = typeConvert(c)
+        d = typeConvert(d)
 
         radiusBase = sqrt(a*a + b*b)
         radiusInput = sqrt(c*c + d*d)
